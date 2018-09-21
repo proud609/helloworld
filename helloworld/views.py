@@ -6,4 +6,4 @@ from django.contrib.auth.models import User
 
 
 def index(request):
-	return HttpResponse('Hello,World!這是劉正宇的專案')
+	return render(request, 'jackproj.html')
