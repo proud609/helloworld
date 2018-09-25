@@ -8,35 +8,34 @@ html, body {
         background-color: #FFF;
     }
 */
-    
 
     #ta {
-        /*color:red;*/
-        font-size: 110%;
+        color:yellow;
+        font-size: 200%;
         text-indent: 100px;
         text-align: center;
     }
 
     #ps{
-        color:red;
+        color:yellow;
+        text-align:center;
     }
 
     h1,h2{
+        color:white;
         font-size: 20px;
         text-align: center;
     }
 
-
     #container {
-        top: 50px;
         width: 800px;
         /*height: auto;*/
         margin: 0 auto;
         display: block;
         position: relative;
         /*border-style: double;*/
-        border-width: thin; 
-        /*background-color: #FFF;*/
+        border-width:thin; 
+        background-color:white;
         /*margin: 30px 50px 30px 50px;*/
         /*border: 2px solid #00A;*/
     }
