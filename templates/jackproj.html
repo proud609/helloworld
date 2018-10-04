@@ -8,7 +8,7 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" />
     
 </head>
-<body background="/static/css/Lovely.png" BGPROPERTIES=FIXED>
+<body background="{% static 'image/Lovely.png' %}" BGPROPERTIES=FIXED>
     <h1>Hi，this is today what jack what to do</h1>
     <h2>the basic of html and css<br>
         I should be more hard work<br>
@@ -36,7 +36,10 @@
                     <li>AND</li>
                     <li>THE</li>
                     <LI>PROUDEST</LI>
-                </ol>      
+                </ol>
+                {% for i in ClassList %}
+                {{ i }}{% if not forloop.last %},{% endif %} 
+                {% endfor %}   
             </div>
         </div>
         <div id="send-box">
@@ -45,11 +48,11 @@
                 <input type="text" name="msg" id="msg" placeholder="說點什麼？">
                 <input type="submit" id="submit" value="送出">
             </form>
-            
+            {{hello}}
         </div>
     </div>
     <div id = "ps">Ps:格子是假的，無法輸入ＸＤ</div>
-    <P Align=center><img src="/static/css/formula.png"> </p>
+    <P Align=center><img src={% static 'image/formula.png' %}> </p>
 </body>
 
 </html>
