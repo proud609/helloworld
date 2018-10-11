@@ -18,29 +18,14 @@
         3.changing some attribute in single world with css<br>
     </h2>
     <p id="ta">by劉正宇<br></p>
-    <div id="container">
+   <div id="container">
         <div id="content">
-            <div class="msg">
-                <span class="name">Pecu</span>
-                Hello,Class! this is what ul do!
-                <ul>
-                    <li>BE</li>
-                    <li>THE</li>
-                    <li>BEST</li>
-                </ul>
-            </div>
-            <div class="msg">
-                <span class="name">Michael</span>
-                    Hello! And this is what ol do!
-                <ol>
-                    <li>AND</li>
-                    <li>THE</li>
-                    <LI>PROUDEST</LI>
-                </ol>
-                {% for i in ClassList %}
-                {{ i }}{% if not forloop.last %},{% endif %} 
-                {% endfor %}   
-            </div>
+            {% for msg in msgs %}
+                <div class='msg'>
+                    <span class="name">{{msg.talker}}</span>
+                    {{msg.message}}
+                </div>
+            {% endfor %}
         </div>
         <div id="send-box">
             <form id="send-form">
