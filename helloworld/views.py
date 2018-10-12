@@ -20,3 +20,5 @@ def index(request):
 	msgs = Textmessage.objects.all()
 	ClassList=map (str , range(100))
 	return render(request, 'jackproj.html',locals())
+def  home(request):
+	return render(request,'home.html',locals())
