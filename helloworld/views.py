@@ -14,11 +14,14 @@ def menu(request):
 def hello(request):
     return HttpResponse("Hello world ! ")
 def index(request):
-	t1 = Textmessage.objects.create(talker='Jack',message='Hello1')
-	t2 = Textmessage.objects.create(talker='JackS',message='Hello2')
-	t3 = Textmessage.objects.create(talker='JackA',message='Hello3')
-	msgs = Textmessage.objects.all()
-	ClassList=map (str , range(100))
-	return render(request, 'jackproj.html',locals())
+    if 'ok' in request.POST:
+        user = request.POST['user']
+        content = request.POST['content']
+        #email = request.POST['email']
+        #date_time = datetime.datetime.now()     # 擷取現在時間
+        Textmessage.objects.create(talker = user, message=content) 
+        msgs = Textmessage.objects.all()
+        ClassList=map (str , range(100))
+    return render(request,'jackproj.html',locals())
 def  home(request):
 	return render(request,'home.html',locals())

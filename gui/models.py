@@ -7,7 +7,7 @@ class Textmessage(models.Model):
 	message = models.CharField(max_length=50,blank=True)
 	def _str_(self):
 		return self.talker + " "+ self.message
-
+#restaurant
 class Restaurant(models.Model):
     name = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=15)
