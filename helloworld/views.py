@@ -25,3 +25,5 @@ def index(request):
     return render(request,'jackproj.html',locals())
 def  home(request):
 	return render(request,'home.html',locals())
+def login(request):
+	return render(request,'login.html',locals())

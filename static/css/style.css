@@ -1,10 +1,41 @@
 html, body {
         padding: 0;
-        margin: 0;
-        background-color: red;
-
+        margin: 0;    
     }
+    body {
+        background-color: #fff;
+        color: rgba(0, 0, 0, 0.5);
+    }
+    body.is-loading:after {
+            visibility: hidden;
+            opacity: 0;
+        }
 
+        body:after {
+            -moz-pointer-events: none;
+            -webkit-pointer-events: none;
+            -ms-pointer-events: none;
+            pointer-events: none;
+            -moz-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            -webkit-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            -ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            content: '';
+            background-image: url(../images/Lovely.png);
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            visibility: visible;
+            opacity: 1;
+        }
 
     #ta {
         color:yellow;
