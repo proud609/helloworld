@@ -8,3 +8,7 @@ https://jack-helloworld.herokuapp.com/
 https://weektwofinal.herokuapp.com/
 
 第五週 留言板完成(遇到粉多問題)
+
+第六週 註冊與登入系統完成(沒有做權限的部分，登入系統暫無作用)
+      遇到的問題: is_authenticate在django2.0以後是屬性
+                 if 下方要加一整行的空白才會中斷
