@@ -1,0 +1,131 @@
+html, body {
+        padding: 0;
+        margin: 0;    
+    }
+    body {
+        background-color: #fff;
+        color: rgba(0, 0, 0, 0.5);
+    }
+    body.is-loading:after {
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        body:after {
+            -moz-pointer-events: none;
+            -webkit-pointer-events: none;
+            -ms-pointer-events: none;
+            pointer-events: none;
+            -moz-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            -webkit-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            -ms-transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            transition: opacity 1.5s ease-in-out, visibility 1.5s;
+            content: '';
+            /*background-image: url(../images/Lovely.png);*/
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: fixed;
+            display: block;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: -1;
+            visibility: visible;
+            opacity: 1;
+        }
+
+    #ta {
+        color:yellow;
+        font-size: 200%;
+        text-indent: 100px;
+        text-align: center;
+    }
+
+    #ps{
+        color:yellow;
+        text-align:center;
+    }
+
+    h1,h2{
+        color:white;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    #container {
+        width: 800px;
+        /*height: auto;*/
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        /*border-style: double;*/
+        border-width:thin; 
+        background-color:white;
+        /*margin: 30px 50px 30px 50px;*/
+        /*border: 2px solid #00A;*/
+    }
+
+    #status-box {
+        text-align: right;
+        font-size: .6em;
+    }
+ 
+    #content {
+        width: 100%;
+        height: 350px;
+        border: 1px solid darkolivegreen;
+        border-radius: 5px;
+        overflow: auto;
+    }
+ 
+    #send-box {
+        width: 100%;
+        text-align: center;
+    }
+ 
+    #send-box input {
+        display: inline-block;
+    }
+ 
+
+    #name, #msg, #submit{
+        margin: 10px;
+        font-size: 15px;
+    }
+    input[name="name"] {
+        width: 10%;
+        /*height: 10%;*/
+    }
+ 
+    input[name="msg"] {
+        width: 70%;
+    }
+ 
+    input[type="button"] {
+        width: 10%;
+    }
+ 
+    .msg {
+        width: 73%;
+        display: inline-block;
+        padding: 5px 0 5px 10px;
+    }
+ 
+    .msg > span {
+        width: 25%;
+        display: inline-block;
+    }
+ 
+    .msg > span::before {
+        color: darkred;
+        content: " [ ";
+    } 
+ 
+    .msg > span::after {
+        color: darkred;
+        content: " ]   : ";
+        size: 100%;
+    }        

@@ -1,17 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Login</title>
-</head>
-<body>
-	<p>Account:</p>
-	<input id="user" type="text" name="user" placeholder="帳號OwO">    
-    <br>
-    <p>Password:</p>
-    <input id="Password" type="text" name="content" placeholder="密碼~">
-    <br>	
-	<input type="submit" id="submit" value="登錄">  
-	<input type="button" value="To_main" onclick="location.href='/index'">
-</body>
+<html>
+    <head>
+        <title> login </title>
+        <meta charset='utf-8'>
+    </head>
+    <body>
+        <form action="" method="post">
+            <label for="username">用戶名稱:</label>
+            <input type="text" name="username" value="" id="username"><br>
+            <label for="password">用戶密碼:</label>
+            <input type="password" name="password" value="" id="password"><br>
+            <input type="submit" value="登入" />
+        </form>
+        <p><a href="/register/">註冊</a></p>
+    </body>
 </html>

@@ -23,8 +23,10 @@ from gui.views import menu
 urlpatterns = [
     path('hello/',views.hello),
     path('admin/', admin.site.urls),
-    path('menu/',menu),
-    path('Login/',views.login),
+    path('login/',views.login),
     path('index/',views.index),
+    path('register/',views.register),
     path('', views.home),
+    path('logout/',views.logout),
+    path('hello/',views.hello),
 ]

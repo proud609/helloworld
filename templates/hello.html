@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title> hello </title>
+        <meta charset='utf-8'>
+    </head>
+    <body>
+        {% if request.user.is_authenticated %}
+            <p>{{request.user}} 您已經登入囉!</p>
+            <input type="button" value="留言板" onclick="location.href='/index'">
+            <br>
+            <input type="button" value="登出" onclick="location.href='/logout/'">
+        {% else %}
+            <p>您尚未登入!<a href="/login/">登入</a></p>
+        {% endif %}
+    </body>
+</html>
+
