@@ -1,7 +1,7 @@
 # helloworld
 #我是資管二的劉正宇，此為數位應用程式設計的repo以及成品
 
-#this is week 1's final app
+#this is week 1's final app(已停止更新)
 https://jack-helloworld.herokuapp.com/
 
 #this is week 2's
