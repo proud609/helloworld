@@ -90,6 +90,11 @@ html, body {
         display: inline-block;
     }
  
+    div[id = "logout_button"]{
+        width: 2000%;
+        height: 80%;
+        text-align: center;
+    }
 
     #name, #msg, #submit{
         margin: 10px;
@@ -107,7 +112,7 @@ html, body {
     input[type="button"] {
         width: 10%;
     }
- 
+
     .msg {
         width: 73%;
         display: inline-block;

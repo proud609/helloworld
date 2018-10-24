@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Week2Example留言板</title>
-    <link href="{% static 'css/new.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/new_1.css' %}" rel="stylesheet" type="text/css" />
 </head>
 <body background="{% static 'images/c-o-fanart-na-6619.jpg' %}" BGPROPERTIES=FIXED>
     <h1>Hi，this is today what jack what to do</h1>
@@ -16,6 +16,9 @@
         2.insert background,when it couldn't appear use red as it background color<br> 
         3.changing some attribute in single world with css<br>
     </h2>
+    <div style="width:100%; height:100%"  id="logout_button">
+        <input type="button" value="登出" onclick="location.href='/logout/'" name="logout_button">
+    </div>
     <p id="ta">by劉正宇<br></p>
    <div id="container">
         <div id="content">
@@ -27,7 +30,6 @@
             {% endfor %}
         </div>
     <form action="" method="post">   
-                <input id="user" type="text" name="user" placeholder="暱稱">    
                 <input id="content" type="text" name="content" placeholder="說點什麼？">
                 <input type="hidden" name="ok" value="yes">
                 <input type="submit" id="submit" value="送出">         

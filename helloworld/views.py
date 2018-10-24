@@ -13,8 +13,8 @@ def index(request):
     if not request.user.is_authenticated: 
         return HttpResponseRedirect('/hello/')
 
-    if 'ok' in request.POST:
-        user = request.POST['user']
+    elif 'ok' in request.POST:
+        user = request.user.username
         content = request.POST['content']
         #email = request.POST['email']
         #date_time = datetime.datetime.now()     # 擷取現在時間
