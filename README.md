@@ -12,3 +12,5 @@ https://weektwofinal.herokuapp.com/
 第六週 註冊與登入系統完成(沒有做權限的部分，登入系統暫無作用)
       遇到的問題: is_authenticate在django2.0以後是屬性
                  if 下方要加一整行的空白才會中斷
+      更新:目前登入後會自動填入暱稱(不再提供暱稱欄位)
+      
