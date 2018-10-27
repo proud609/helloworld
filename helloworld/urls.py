@@ -17,7 +17,6 @@ from django.contrib import admin
 from django.urls import path
 from . import views
 from django.conf.urls import url
-from gui.views import menu
 
 
 urlpatterns = [
@@ -29,4 +28,7 @@ urlpatterns = [
     path('', views.home),
     path('logout/',views.logout),
     path('hello/',views.hello),
+    path('admin_message/',views.admin_message),
+    path('edit/',views.edit),
+    path('delete/',views.delete),
 ]

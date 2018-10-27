@@ -8,8 +8,11 @@ from django.contrib.auth.models import User
 from gui.models import Textmessage
 from django.contrib.auth.forms import UserCreationForm
 
-
+def delete(request):
+    Textmessage.objects.all().delete()
+    return HttpResponseRedirect('/index/')
 def index(request):
+    msgs = Textmessage.objects.all()
     if not request.user.is_authenticated: 
         return HttpResponseRedirect('/hello/')
 
@@ -17,11 +20,13 @@ def index(request):
         user = request.user.username
         content = request.POST['content']
         #email = request.POST['email']
-        #date_time = datetime.datetime.now()     # 擷取現在時間
-        Textmessage.objects.create(talker = user, message=content) 
+        date_time = datetime.now()     # 擷取現在時間
+        Textmessage.objects.create(talker = user, message=content,talktime=date_time) 
         msgs = Textmessage.objects.all()
         ClassList=map (str , range(100))
-    return render(request,'jackproj.html',locals())
+    return render(request,'jackproj.html',locals())    
+def edit(request):
+    return HttpResponseRedirect('/index/')
 def  home(request):
 	return render(request,'home.html',locals())
 def hello(request):
@@ -45,6 +50,17 @@ def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/hello/')
 
+def admin_message(request):
+    user = request.user.username
+    msgs_f = Textmessage.objects.filter(talker=user)
+    ClassList=map (str , range(100))
+    if 'ok' in request.POST:
+        msg_h = request.POST['content']
+        delete_msg = Textmessage.objects.filter(message = msg_h)
+        delete_msg.delete()       
+        return HttpResponseRedirect('/admin_message/')
+    return render(request,'admin_message.html',locals())
+
 def register(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -54,3 +70,5 @@ def register(request):
     else:
         form = UserCreationForm()
     return render_to_response('register.html',locals())
+
+

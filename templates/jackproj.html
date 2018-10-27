@@ -8,24 +8,18 @@
     <link href="{% static 'css/new_1.css' %}" rel="stylesheet" type="text/css" />
 </head>
 <body background="{% static 'images/c-o-fanart-na-6619.jpg' %}" BGPROPERTIES=FIXED>
-    <h1>Hi，this is today what jack what to do</h1>
-    <h2>the basic of html and css<br>
-        I should be more hard work<br>
-        what i've done :<br> 
-        1.insert picture of calculus formula<br>
-        2.insert background,when it couldn't appear use red as it background color<br> 
-        3.changing some attribute in single world with css<br>
-    </h2>
+    <p id="ta">Message box<br></p>
     <div style="width:100%; height:100%"  id="logout_button">
         <input type="button" value="登出" onclick="location.href='/logout/'" name="logout_button">
     </div>
-    <p id="ta">by劉正宇<br></p>
+    
    <div id="container">
         <div id="content">
             {% for msg in msgs %}
                 <div class='msg'>
                     <span class="name">{{msg.talker}}</span>
                     {{msg.message}}
+                    {{msg.talktime}}
                 </div>
             {% endfor %}
         </div>
@@ -34,6 +28,11 @@
                 <input type="hidden" name="ok" value="yes">
                 <input type="submit" id="submit" value="送出">         
     </div>
-</body>
 
+</body>
+<br>
+     <div style="width:100%; height:100%"  id="logout_button">
+        <input type="button" value="管理你的訊息" onclick="location.href='/admin_message/'" name="admin_button">
+        <input type="button" value="delete_all" onclick="location.href='/delete/'" name="delete_button">
+    </div>
 </html>
