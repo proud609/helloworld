@@ -72,24 +72,10 @@ html, body {
         margin-bottom: :100px;
 
     }
-    .msg {
-        width: 73%;
-        display: inline-block;
-        padding: 5px 0 5px 10px;
+    div[id = "logout_button"]{
+        width: 2000%;
+        height: 80%;
+        text-align: center;
     }
- 
-    .msg > span {
-        width: 25%;
-        display: inline-block;
-    }
- 
-    .msg > span::before {
-        color: darkred;
-        content: " [ ";
-    } 
- 
-    .msg > span::after {
-        color: darkred;
-        content: " ]   : ";
-        size: 100%;
-    }        
+
+    

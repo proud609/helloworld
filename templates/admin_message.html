@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>admin_message</title>
 	{% load  staticfiles %}
-	 <link href="{% static 'css/new_2.css' %}" rel="stylesheet" type="text/css" />
+	 <link href="{% static 'css/new_3.css' %}" rel="stylesheet" type="text/css" />
 </head>
 <body background="{% static 'images/c-o-fanart-na-6619.jpg' %}" BGPROPERTIES=FIXED>
 		<h1>以下是你的訊息</h1>
@@ -13,11 +13,18 @@
 		<div id="container">
                 <div class='msg'>
                 	<form action="" method="post">  
-                	<span class="name">{{msg.talker}}</span>  
-                		<input type="text" id="content" name="content" value="{{msg.message}}">
-                    	<input type="submit" value="刪除" name="delete" >
-                    	<input type="hidden" name="ok" value="yes">
-                    	<input type="button" value="編輯" onclick="location.href='/edit/'" name="edit_button">
+                	<span class="name">{{msg.talker}} {{msg.message}}  {{msg.talktime}}</span>  
+                		<input type="text" id="content" name="content" placeholder="{{msg.message}}">
+                    	<input type="submit" value="編輯" name="delete">
+                        <input type="hidden" name="time" value="{{msg.talktime}}">
+                        <input type="hidden" name="edit_h" value="yes">
+                    </form>
+                        <form action="" method="post">
+                            <input type="hidden" value="{{msg.talktime}}" name="time">
+                            <input type="hidden" value="{{msg.message}}" name="content">
+                            <input type="hidden" name="delete_h" value="yes">
+                            <input type="submit" value="刪除">
+                        </form>
              </div>
          </div>
             {% endfor %}

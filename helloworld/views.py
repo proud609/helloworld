@@ -24,11 +24,11 @@ def index(request):
         Textmessage.objects.create(talker = user, message=content,talktime=date_time) 
         msgs = Textmessage.objects.all()
         ClassList=map (str , range(100))
-    return render(request,'jackproj.html',locals())    
-def edit(request):
-    return HttpResponseRedirect('/index/')
+    return render(request,'jackproj.html',locals())
+
 def  home(request):
 	return render(request,'home.html',locals())
+
 def hello(request):
     return render_to_response('hello.html',locals())
 
@@ -54,11 +54,18 @@ def admin_message(request):
     user = request.user.username
     msgs_f = Textmessage.objects.filter(talker=user)
     ClassList=map (str , range(100))
-    if 'ok' in request.POST:
-        msg_h = request.POST['content']
-        delete_msg = Textmessage.objects.filter(message = msg_h)
-        delete_msg.delete()       
+    if 'edit_h' in request.POST:
+        msg_e = request.POST['content']
+        data_time = request.POST['time']
+        edit_msg = Textmessage.objects.filter(talktime=data_time,talker=user).update(message=msg_e,talktime=data_time)    
         return HttpResponseRedirect('/admin_message/')
+    elif 'delete_h' in request.POST:
+        msg_d = request.POST['content']
+        data_time = request.POST['time']
+        delete_msg = Textmessage.objects.filter(talktime=data_time,talker=user,message=msg_d)
+        delete_msg.delete()  
+        return HttpResponseRedirect('/admin_message/')
+
     return render(request,'admin_message.html',locals())
 
 def register(request):

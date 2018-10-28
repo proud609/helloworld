@@ -29,6 +29,5 @@ urlpatterns = [
     path('logout/',views.logout),
     path('hello/',views.hello),
     path('admin_message/',views.admin_message),
-    path('edit/',views.edit),
     path('delete/',views.delete),
 ]

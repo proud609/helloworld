@@ -9,3 +9,5 @@ class Textmessage(models.Model):
 
     def _str_(self):
         return self.talker+ " "+self.message
+    class Meta:
+    	ordering = ['talktime']
