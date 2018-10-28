@@ -30,4 +30,5 @@ urlpatterns = [
     path('hello/',views.hello),
     path('admin_message/',views.admin_message),
     path('delete/',views.delete),
+    path('error/',views.error),
 ]

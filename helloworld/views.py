@@ -8,8 +8,13 @@ from django.contrib.auth.models import User
 from gui.models import Textmessage
 from django.contrib.auth.forms import UserCreationForm
 
+def error(request):
+    return render(request,'error.html',locals())
 def delete(request):
-    Textmessage.objects.all().delete()
+    if request.user.is_superuser:
+        Textmessage.objects.all().delete()
+    else:
+        return HttpResponseRedirect('/error/')
     return HttpResponseRedirect('/index/')
 def index(request):
     msgs = Textmessage.objects.all()
@@ -65,7 +70,10 @@ def admin_message(request):
         delete_msg = Textmessage.objects.filter(talktime=data_time,talker=user,message=msg_d)
         delete_msg.delete()  
         return HttpResponseRedirect('/admin_message/')
-
+    elif 'search_h' in request.POST:
+        msg_s = request.POST['search_msg']
+        msgs_f = Textmessage.objects.filter(talker=user, message__contains = msg_s)
+        return render(request,'admin_message.html',locals())
     return render(request,'admin_message.html',locals())
 
 def register(request):

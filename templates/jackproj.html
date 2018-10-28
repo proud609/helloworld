@@ -33,6 +33,8 @@
 <br>
      <div style="width:100%; height:100%"  id="logout_button">
         <input type="button" value="管理你的訊息" onclick="location.href='/admin_message/'" name="admin_button">
-        <input type="button" value="delete_all" onclick="location.href='/delete/'" name="delete_button">
-    </div>
+        {% if request.user.is_superuser %}
+            <input type="button" value="刪除所有訊息(僅限管理員)" onclick="location.href='/delete/'" name="delete_button">
+        {% endif %}
+     </div>
 </html>
