@@ -4,37 +4,26 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Week2Example留言板</title>
+    <title>竹鼠OwO</title>
     <link href="{% static 'css/new_1.css' %}" rel="stylesheet" type="text/css" />
 </head>
-<body background="{% static 'images/c-o-fanart-na-6619.jpg' %}" BGPROPERTIES=FIXED>
-    <p id="ta">Message box<br></p>
-    <div style="width:100%; height:100%"  id="logout_button">
-        <input type="button" value="登出" onclick="location.href='/logout/'" name="logout_button">
-    </div>
-    
-   <div id="container">
-        <div id="content">
-            {% for msg in msgs %}
-                <div class='msg'>
-                    <span class="name">{{msg.talker}}</span>
-                    {{msg.message}}
-                    {{msg.talktime}}
-                </div>
-            {% endfor %}
-        </div>
-    <form action="" method="post">   
-                <input id="content" type="text" name="content" placeholder="說點什麼？">
-                <input type="hidden" name="ok" value="yes">
-                <input type="submit" id="submit" value="送出">         
-    </div>
-
+<body background="{% static 'images/bg.jpg' %}" BGPROPERTIES=FIXED>
+<div id="item" draggable="true">  
+<img src="{% static 'images/fire.jpg' %}" width="200" height="100" name="fire">
+<img src="{% static 'images/stone.png' %}" width="200" height="100" align="right">
+<br>    
+<img src="{% static 'images/germ.jpg' %}" width="200" height="100">
+<img src="{% static 'images/images.jpg' %}" width="200" height="100" align="right">
+<br>
+<div align="center">
+    <img src="{% static 'images/mouse.jpg' %}" width="1000" height="500" >
+</div>
+<br>
+<img src="{% static 'images/sword.jpg' %}" width="200" height="100"> 
+<br>
+<img src="{% static 'images/sun.jpg' %}" width="200" height="100"> 
+</div>
 </body>
 <br>
-     <div style="width:100%; height:100%"  id="logout_button">
-        <input type="button" value="管理你的訊息" onclick="location.href='/admin_message/'" name="admin_button">
-        {% if request.user.is_superuser %}
-            <input type="button" value="刪除所有訊息(僅限管理員)" onclick="location.href='/delete/'" name="delete_button">
-        {% endif %}
-     </div>
+
 </html>

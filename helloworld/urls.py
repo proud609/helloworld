@@ -19,16 +19,7 @@ from . import views
 from django.conf.urls import url
 
 
-urlpatterns = [
-    path('hello/',views.hello),
-    path('admin/', admin.site.urls),
-    path('login/',views.login),
-    path('index/',views.index),
-    path('register/',views.register),
+urlpatterns = [ 
     path('', views.home),
-    path('logout/',views.logout),
-    path('hello/',views.hello),
-    path('admin_message/',views.admin_message),
-    path('delete/',views.delete),
-    path('error/',views.error),
+    path('index/',views.index),
 ]
