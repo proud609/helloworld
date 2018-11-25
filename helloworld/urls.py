@@ -21,5 +21,9 @@ from django.conf.urls import url
 
 urlpatterns = [ 
     path('', views.home),
+    path('home/', views.home),
     path('index/',views.index),
+    path('logout/',views.logout),
+    path('login/',views.login),
+    path('register/',views.register),
 ]
