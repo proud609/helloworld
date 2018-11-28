@@ -5,28 +5,108 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>竹鼠OwO</title>
-    <link href="{% static 'css/new_1.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/new_2.css' %}" rel="stylesheet" type="text/css" />
 </head>
-<body background="{% static 'images/bg.jpg' %}" BGPROPERTIES=FIXED>
-<div id="item" draggable="true">  
-<img src="{% static 'images/fire.jpg' %}" width="200" height="100" name="fire">
-<img src="{% static 'images/stone.png' %}" width="200" height="100" align="right">
-<br>    
-<img src="{% static 'images/germ.jpg' %}" width="200" height="100">
-<img src="{% static 'images/images.jpg' %}" width="200" height="100" align="right">
+<body background="{% static 'images/bg.jpg' %}" BGPROPERTIES=FIXED>  
+<img src="{% static 'images/fire.jpg' %}" width="200" height="100" align="left" id="item1" draggable="true">
+<img src="{% static 'images/stone.png' %}" width="200" height="100" align="right" id="item2" draggable="true">   
+<img src="{% static 'images/germ.jpg' %}" width="200" height="100" align="left" id="item3" draggable="true">
+<img src="{% static 'images/images.jpg' %}" width="200" height="100" align="right" id="item4" draggable="true">
 <br>
-<div align="center">
-    <img src="{% static 'images/mouse.jpg' %}" width="1000" height="500" >
+<br>
+<br>
+<br>
+<br>
+<div align="center" id="mouse">
+    <img src="{% static 'images/mouse.jpg' %}" width="1000" height="500" id="item" data-role="drag-drop-container" >
 </div>
 <br>
-<img src="{% static 'images/sword.jpg' %}" width="200" height="100">
-<img src="{% static 'images/mouse2.jpg' %}" width="200" height="100" align="right"> 
-<br>
-<img src="{% static 'images/sun.jpg' %}" width="200" height="100"> 
-<img src="{% static 'images/bamboo.jpg' %}" width="200" height="100" align="right"> 
+<img src="{% static 'images/sword.jpg' %}" width="200" height="100" align="left" id="item5" draggable="true">
+<img src="{% static 'images/mouse2.jpg' %}" width="200" height="100" align="right" id="item6" draggable="true"> 
+<img src="{% static 'images/sun.jpg' %}" width="200" height="100" align="left" id="item7" draggable="true">  
+<img src="{% static 'images/bamboo.jpg' %}" width="200" height="100" align="right" id="item8" draggable="true"> 
 </div>
-<input type="button" value="登出" onclick="location.href='/logout'" align="center">
+<br>
+<br>
+<br>
+<br>
+<br>
+<input type="button" value="登出" onclick="location.href='/logout'" align="center" id="item" draggable="true">
 </body>
 <br>
+<script>
+let sourceContainerId = "";
 
+// Allow multiple draggable items
+let dragSources = document.querySelectorAll('[draggable="true"]');
+dragSources.forEach(dragSource => {
+    dragSource.addEventListener("dragstart", dragStart);
+    dragSource.addEventListener("dragend", dragEnd);
+});
+
+function dragStart(e) {
+    this.classList.add("dragging");
+    e.dataTransfer.setData("image/jpg", e.target.id);
+    sourceContainerId = this.parentElement.id;
+}
+
+function dragEnd(e) {
+    this.classList.remove("dragging");
+}
+
+// Allow multiple dropped targets
+let dropTargets = document.querySelectorAll(
+    '[data-role="drag-drop-container"]'
+);
+dropTargets.forEach(dropTarget => {
+    dropTarget.addEventListener("drop", dropped);
+    dropTarget.addEventListener("dragenter", cancelDefault);
+    dropTarget.addEventListener("dragover", dragOver);
+    dropTarget.addEventListener("dragleave", dragLeave);
+});
+
+function dropped(e) {
+    // execute function only when target container is different from source container
+    if (this.id !== sourceContainerId) {
+        cancelDefault(e);
+        let id = e.dataTransfer.getData("image/jpg");
+        e.target.appendChild(document.getElementById(id));
+        this.style.opacity =0;
+        this.classList.remove("hover");
+        if(id == "item1")
+        	window.location.assign("/video_f/");
+        else if(id == "item2")
+        	window.location.assign("/video_s/");
+        else if(id == "item3")
+        	window.location.assign("/video_g/");
+        else if(id == "item4")
+        	window.location.assign("/video_m/");
+        else if(id == "item5")
+        	window.location.assign("/video_sword/");
+        else if(id == "item6")
+        	window.location.assign("/video_fight/");
+        else if(id == "item7")
+        	window.location.assign("/video_sun/");
+        else if(id == "item8")
+        	window.location.assign("/video_b/");
+        //window.location.assign("/home/");
+    }
+
+}
+
+function dragOver(e) {
+    cancelDefault(e);
+    this.classList.add("hover");
+}
+
+function dragLeave(e) {
+    this.classList.remove("hover");
+}
+
+function cancelDefault(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+}
+</script>	
 </html>

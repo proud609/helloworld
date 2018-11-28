@@ -26,4 +26,12 @@ urlpatterns = [
     path('logout/',views.logout),
     path('login/',views.login),
     path('register/',views.register),
+    path('video_f/',views.fire),
+    path('video_fight/',views.fight),
+    path('video_s/',views.stone),
+    path('video_m/',views.money),
+    path('video_b/',views.bamboo),
+    path('video_g/',views.germ),
+    path('video_sun/',views.sun),
+    path('video_sword/',views.sword),
 ]

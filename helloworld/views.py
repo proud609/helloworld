@@ -11,8 +11,23 @@ from django.contrib.auth.forms import UserCreationForm
 
 def index(request):
     return render(request,'jackproj.html',locals())
-
-def  home(request):
+def fire(request):
+    return render(request,'fire.html',locals())
+def fight(request):
+    return render(request,'fight.html',locals())
+def stone(request):
+    return render(request,'stone.html',locals())
+def money(request):
+    return render(request,'money.html',locals())
+def bamboo(request):
+    return render(request,'bamboo.html',locals())
+def germ(request):
+    return render(request,'germ.html',locals())
+def sun(request):
+    return render(request,'sun.html',locals())
+def sword(request):
+    return render(request,'sword.html',locals())
+def home(request):
     return render(request,'home.html',locals())
 def login(request):
     if request.user.is_authenticated: 
