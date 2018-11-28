@@ -75,6 +75,7 @@ WSGI_APPLICATION = 'helloworld.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
+<<<<<<< HEAD
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -86,9 +87,22 @@ DATABASES = {
     }
 }
 #import dj_database_url
+=======
+>>>>>>> 95e7b2edf564ce95d095ec557f2d36f679fa3849
 #DATABASES = {
-#    'default': dj_database_url.config(),
+#    'default': {
+#        'ENGINE': '',
+#        'NAME': '',
+#        'USER': '',
+#        'PASSWORD': '',
+#        'HOST': '',
+#        'PORT': '',
+#    }
 #}
+import dj_database_url
+DATABASES = {
+    'default': dj_database_url.config(),
+}
 
 
 # Password validation
