@@ -34,4 +34,5 @@ urlpatterns = [
     path('video_g/',views.germ),
     path('video_sun/',views.sun),
     path('video_sword/',views.sword),
+    path('restart/',views.restart),
 ]

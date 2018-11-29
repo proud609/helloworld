@@ -5,9 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>竹鼠OwO</title>
-    <link href="{% static 'css/new_2.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/new_3.css' %}" rel="stylesheet" type="text/css" />
 </head>
-<body background="{% static 'images/bg.jpg' %}" BGPROPERTIES=FIXED>  
+<body>  
+<H1>{% for r in R_counter %}{{r.counter}}/8{% endfor %}</H1>
+<br>
 <img src="{% static 'images/fire.jpg' %}" width="200" height="100" align="left" id="item1" draggable="true">
 <img src="{% static 'images/stone.png' %}" width="200" height="100" align="right" id="item2" draggable="true">   
 <img src="{% static 'images/germ.jpg' %}" width="200" height="100" align="left" id="item3" draggable="true">
@@ -31,7 +33,8 @@
 <br>
 <br>
 <br>
-<input type="button" value="登出" onclick="location.href='/logout'" align="center" id="item" draggable="true">
+<input type="button" value="登出" onclick="location.href='/logout'" align="center" draggable="true">
+<input type="button" value="初始化" onclick="location.href='/restart'" align="center" draggable="true">
 </body>
 <br>
 <script>
