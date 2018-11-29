@@ -7,7 +7,7 @@
     <title>竹鼠OwO</title>
     <link href="{% static 'css/new_3.css' %}" rel="stylesheet" type="text/css" />
 </head>
-<body>  
+<body background="{% static 'images/bg.jpg' %}" >  
 <H1>{% for r in R_counter %}{{r.counter}}/8{% endfor %}</H1>
 <br>
 <img src="{% static 'images/fire.jpg' %}" width="200" height="100" align="left" id="item1" draggable="true">

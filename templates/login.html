@@ -3,37 +3,37 @@
 {% load  staticfiles %}
 <head>
    
-        <title> login </title>
-        <meta charset='utf-8'>
-            <title>Register</title>
+    <meta charset="UTF-8">
+    <title>login</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->  
 <link rel="icon" type="image/png" href="{% stylee 'images/icons/favicon.ico' % }">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% stylee 'vendor/bootstrap/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/vendor/bootstrap/css/bootstrap.min.css' %}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% stylee 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %} ">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %} ">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% stylee fonts/iconic/css/material-design-iconic-font.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/fonts/iconic/css/material-design-iconic-font.min.css' %}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% stylee 'vendor/animate/animate.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/vendor/animate/animate.css' %}">
 <!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="{% stylee 'vendor/css-hamburgers/hamburgers.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/vendor/css-hamburgers/hamburgers.min.css' %}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% stylee 'vendor/animsition/css/animsition.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/vendor/animsition/css/animsition.min.css' %}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% stylee 'vendor/select2/select2.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/vendor/select2/select2.min.css' %}">
 <!--===============================================================================================-->  
-    <link rel="stylesheet" type="text/css" href="{% stylee 'vendor/daterangepicker/daterangepicker.css ' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/vendor/daterangepicker/daterangepicker.css ' %}">
 <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css" href="{% stylee 'css/util.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% stylee 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'stylee/css/main.css' %}">
 <!--===============================================================================================-->
 </head>
 <body>
     
     <div class="limiter">
-        <div class="container-login100" style="background-image: url('{% stylee 'images/bg-01.jpg' %}');">
+        <div class="container-login100" style="background-image: url('{% static 'stylee/images/bg-01.jpg' %}');">
             <div class="wrap-login100">
                 <form class="login100-form validate-form" action="" method="post">
                     
@@ -42,14 +42,14 @@
                     </span>
 
                     <div class="wrap-input100 validate-input" data-validate = "Enter username">
-                        <input class="input100" type="text" name="username" placeholder="用戶名稱">
+                        <input class="input100" type="text" name="username"  id="username" placeholder="用戶名稱">
                         <span class="focus-input100" data-placeholder="&#xf207;"></span>
 
                 
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Enter password">
-                        <input class="input100" type="password" name="pass" placeholder="用戶密碼">
+                        <input class="input100" type="password" name="password"  id="password" placeholder="用戶密碼">
                         <span class="focus-input100" data-placeholder="&#xf191;"></span>
                     </div>
 
@@ -60,10 +60,8 @@
                             登入
                         </button>
                     </div>
-                    <div class="text-center p-t-90">
-                        <a class="txt1" href="/register/">
-                            註冊
-                        </a>
+                     <div class="container-login100-form-btn">
+                        <input type="button" class="login100-form-btn"  value="註冊" onclick="location.href='/register'">
                     </div>
                 </form>
             </div>
@@ -74,21 +72,21 @@
     <div id="dropDownSelect1"></div>
     
 <!--===============================================================================================-->
-    <script src="{% stylee 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'stylee/vendor/jquery/jquery-3.2.1.min.js' %}"></script>
 <!--===============================================================================================-->
-    <script src="{% stylee 'vendor/animsition/js/animsition.min.js' %}"></script>
+    <script src="{% static 'stylee/vendor/animsition/js/animsition.min.js' %}"></script>
 <!--===============================================================================================-->
-    <script src="{% stylee 'vendor/bootstrap/js/popper.js' %}"></script>
-    <script src="{% stylee 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'stylee/vendor/bootstrap/js/popper.js' %}"></script>
+    <script src="{% static 'stylee/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
 <!--===============================================================================================-->
-    <script src="{% stylee 'vendor/select2/select2.min.js' %}"></script>
+    <script src="{% static 'stylee/vendor/select2/select2.min.js' %}"></script>
 <!--===============================================================================================-->
-    <script src="{% stylee 'vendor/daterangepicker/moment.min.js' %}"></script>
-    <script src="{% stylee 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <script src="{% static 'stylee/vendor/daterangepicker/moment.min.js' %}"></script>
+    <script src="{% static 'stylee/vendor/daterangepicker/daterangepicker.js' %}"></script>
 <!--===============================================================================================-->
-    <script src="{% stylee 'vendor/countdowntime/countdowntime.js' %}"></script>
+    <script src="{% static 'stylee/vendor/countdowntime/countdowntime.js' %}"></script>
 <!--===============================================================================================-->
-    <script src="{% stylee 'js/main.js' %}"></script>
+    <script src="{% static 'stylee/js/main.js' %}"></script>
     </body>
 
 </html>
