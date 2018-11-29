@@ -2,14 +2,81 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Registry</title>
+	<title>Register</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="../stylee/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../stylee/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../stylee/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../stylee/fonts/iconic/css/material-design-iconic-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../stylee/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../stylee/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../stylee/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../stylee/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="../stylee/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="../stylee/css/util.css">
+	<link rel="stylesheet" type="text/css" href="../stylee/css/main.css">
+<!--===============================================================================================-->
 </head>
-	<body>
-        <h1>註冊新帳號</h1>
-    
-        <form action="" method="post">
-            {{ form.as_p }}
-            <input type="submit" value="註冊">
-        </form>
+<body>
+	
+	<div class="limiter">
+		<div class="container-login100" style="background-image: url('../stylee/images/bg-01.jpg');">
+			<div class="wrap-login100">
+				<form class="login100-form validate-form" action="" method="post">
+					
+					<span class="login100-form-title p-b-34 p-t-27">
+						註冊新帳號
+					</span>
+
+					<div class="wrap-input100 validate-input" data-validate = "Enter username">
+					
+					
+
+				{{ form.as_p }
+					</div>
+
+			
+
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit" value="註冊">
+							註冊
+						</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+	
+<!--===============================================================================================-->
+	<script src="../stylee/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../stylee/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../stylee/vendor/bootstrap/js/popper.js"></script>
+	<script src="../stylee/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../stylee/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="../stylee/vendor/daterangepicker/moment.min.js"></script>
+	<script src="../stylee/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="../stylee/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="../stylee/js/main.js"></script>
+	
     </body>
 </html>

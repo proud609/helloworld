@@ -177,6 +177,7 @@ iframe {
   z-index: 1;  
 }
 
+
 .container-login100::before {
   content: "";
   display: block;
@@ -202,6 +203,18 @@ iframe {
   background: linear-gradient(top, #009900,#33ff33);
 }
 
+.wrap-login10 {
+  width: 665px;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 55px 55px 37px 55px;
+
+  background: #9152f8;
+  background: -webkit-linear-gradient(top, #009900, #33ff33);
+  background: -o-linear-gradient(top, #009900, #33ff33);
+  background: -moz-linear-gradient(top, #009900, #33ff33);
+  background: linear-gradient(top, #009900,#33ff33);
+}
 
 /*------------------------------------------------------------------
 [ Form ]*/
